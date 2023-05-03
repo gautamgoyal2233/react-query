@@ -4,10 +4,41 @@ const layout = {
   labelCol: { span: 8 },
   wrapperCol: { span: 16 },
 };
-const FormsE = () => {
+
+interface Props {
+  name: string;
+  username: string;
+
+  email: string;
+  phone: string;
+  website: string;
+}
+
+const FormsE: React.FC<Props> = (props) => {
+  console.log(props);
   const onFinish = (values: any) => {
     console.log(values);
   };
+  const initialValues = {
+    user: {
+      Name: props.name,
+      username: "",
+      phone: "",
+      email: "",
+      website: "",
+      address: {
+        street: "",
+        suite: "",
+        city: "",
+        zipcode: ""
+      },
+      company: {
+        name: "",
+        catchPhrase: ""
+      }
+    }
+  };
+  // React.useEffect(() => Form.resetFields(), [props.initialValues]);
   return (
     <Form
       {...layout}
@@ -15,8 +46,9 @@ const FormsE = () => {
       // initialValues ={{ Name: "default value" }}
       onFinish={onFinish}
       style={{ maxWidth: 600 }}
+      initialValues={initialValues}
     >
-      <Form.Item name={["user", "name"]} label="Name" rules={[{}]}>
+      <Form.Item name={["user", "Name"]} label="Name" rules={[{}]}>
         <Input />
       </Form.Item>
       <Form.Item name={["user", "username"]} label="User Name" rules={[{}]}>

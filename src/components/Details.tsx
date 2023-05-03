@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import {  Modal} from "antd";
+import { Modal } from "antd";
 import FormsE from "./FormsE";
 import styled from "styled-components";
 
@@ -116,14 +116,11 @@ const Details: React.FC<PropsData> = ({ item }) => {
     navigate(`/users/${id}`);
   };
 
-
-
-//   Form.setFieldsValue({
-//     username: username
-// });
+  //   Form.setFieldsValue({
+  //     username: username
+  // });
 
   // const [getReportFiltersInitialValues, setReportFiltersInitialValues] = React.useState({});
-  
 
   return (
     <DetailsCard>
@@ -145,7 +142,13 @@ const Details: React.FC<PropsData> = ({ item }) => {
           onOk={handleOk}
           onCancel={handleCancel}
         >
-        <FormsE/>
+          <FormsE
+            name={name}
+            username={username}
+            email={email}
+            phone={phone}
+            website={website}
+          />
         </Modal>
       </ButtonDIV>
 
