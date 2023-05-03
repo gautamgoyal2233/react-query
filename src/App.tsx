@@ -13,7 +13,7 @@ function App() {
   return (
     <>
     <Toaster
-  position="top-center"
+  position="top-right"
   reverseOrder={false}
 />
       <Navbar />

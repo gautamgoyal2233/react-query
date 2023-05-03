@@ -40,7 +40,7 @@ interface Data {
 }
 
 const ParentContainer = styled.div`
-  background-color: #dae0db;
+  background-color: rgb(78 76 52);
   border-radius: 4px;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   padding: 16px;
@@ -50,6 +50,10 @@ const ParentContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  flex-basis: 30%;
+  height : 100%;
+
+
 
 `;
 
@@ -61,11 +65,12 @@ const ButtonContain = styled.div`
 `;
 
 const CenteredButton = styled.div`
-  background-color: black;
+  background-color: rgb(82 73 70);
   color: white;
   padding: 10px;
   cursor: pointer;
   border-radius : 5px;
+ 
 `;
 
 const UserData: React.FC = () => {

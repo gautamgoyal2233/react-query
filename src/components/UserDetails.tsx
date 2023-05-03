@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const UserDetails = () => {
   const DetailsCard = styled.div`
-    background-color: black;
+    background-color: #ED5485;
     border-radius: 4px;
     box-shadow: 2px 2px 2px 2px rgba(1, 1, 1);
     margin-bottom: 16px;
@@ -19,6 +19,7 @@ const UserDetails = () => {
     align-items: center;
     justify-content: center;
     padding: 10px;
+    color : black;
     & > * {
       margin-bottom: 8px;
     }
@@ -51,7 +52,8 @@ const UserDetails = () => {
       <p>Username: {data.username}</p>
       <p>Email: {data.email}</p>
       <p>Phone: {data.phone}</p>
-      <p>Address: {data?.address?.street}</p>
+  
+      <p>Address : {data?.address?.street}</p>
       
     </DetailsCard>
   );
