@@ -117,7 +117,7 @@ const UserData: React.FC = () => {
     }
     toast.success('Successfully Added!')
 
-    data.push(newUser)
+    data?.push(newUser)
     handleCancel()
   };
   if (isError) return <Error />;

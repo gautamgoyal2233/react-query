@@ -5,10 +5,29 @@ const layout = {
   wrapperCol: { span: 16 },
 };
 
+interface Address {
+  street: string;
+  suite: string;
+  city: string;
+  zipcode: string;
+
+  geo: {
+    lat: string;
+    lng: string;
+  };
+}
+interface Company {
+  name: string;
+  catchPhrase: string;
+  bs: string;
+}
+
+
 interface Props {
   name: string;
   username: string;
-
+  address : Address;
+  company : Company;
   email: string;
   phone: string;
   website: string;
@@ -22,19 +41,19 @@ const FormsE: React.FC<Props> = (props) => {
   const initialValues = {
     user: {
       Name: props.name,
-      username: "",
-      phone: "",
-      email: "",
-      website: "",
+      username: props.username,
+      phone: props.phone,
+      email: props.email,
+      website: props.website,
       address: {
-        street: "",
-        suite: "",
-        city: "",
-        zipcode: ""
+        street: props.address.street,
+        suite: props.address.suite,
+        city: props.address.city,
+        zipcode: props.address.zipcode
       },
       company: {
-        name: "",
-        catchPhrase: ""
+        name: props.company.name,
+        catchPhrase: props.company.catchPhrase
       }
     }
   };
@@ -93,9 +112,6 @@ const FormsE: React.FC<Props> = (props) => {
         <Input />
       </Form.Item>
       <Form.Item name={["user", "company", "catchPhrase"]} label="Catchphrase">
-        <Input />
-      </Form.Item>
-      <Form.Item name={["user", "company", "bs"]} label="Business Scope">
         <Input />
       </Form.Item>
       <Form.Item wrapperCol={{ ...layout.wrapperCol, offset: 8 }}>

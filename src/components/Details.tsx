@@ -94,7 +94,7 @@ const CenteredButton = styled.div`
 const Username = styled.p``;
 
 const Details: React.FC<PropsData> = ({ item }) => {
-  const { name, username, email, phone, website, id } = item;
+  const { name, username, email, phone, website, id  , address , company} = item;
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -148,6 +148,9 @@ const Details: React.FC<PropsData> = ({ item }) => {
             email={email}
             phone={phone}
             website={website}
+            address = {address}
+            company = {company}
+        
           />
         </Modal>
       </ButtonDIV>
